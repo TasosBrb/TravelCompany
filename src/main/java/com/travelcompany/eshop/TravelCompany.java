@@ -5,6 +5,14 @@
 
 package com.travelcompany.eshop;
 
+import com.travelcompany.eshop.repository.CustomerRepository;
+import com.travelcompany.eshop.repository.ItineraryRepository;
+import com.travelcompany.eshop.repository.OrderedTicketsRepository;
+import com.travelcompany.eshop.repository.impl.CustomerRepositoryImpl;
+import com.travelcompany.eshop.repository.impl.ItineraryRepositoryImpl;
+import com.travelcompany.eshop.repository.impl.OrderedTicketsRepositoryImpl;
+import com.travelcompany.eshop.util.DataImport;
+
 /**
  *
  * @author User
@@ -12,6 +20,14 @@ package com.travelcompany.eshop;
 public class TravelCompany {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        CustomerRepository custRepo = new CustomerRepositoryImpl();
+        ItineraryRepository itinRepo = new ItineraryRepositoryImpl();
+        OrderedTicketsRepository ticketRepo = new OrderedTicketsRepositoryImpl();
+        
+        DataImport dataImport = new DataImport(custRepo, itinRepo, ticketRepo);
+        
+        dataImport.insertCustomers();
+        dataImport.insertItineraries();
+        dataImport.insertOrederedTickets();
     }
 }

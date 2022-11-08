@@ -13,25 +13,25 @@ import java.util.List;
  */
 public class OrderedTickets extends PersistentClass {
 
-    private Customer customer;
-    private Itineraries itinerary;
+    private int customerId;
+    private int itineraryId;
     private PaymentMethod paymentMethod;
     private double paymentAmount;
 
-    public Customer getCustomer() {
-        return customer;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public Itineraries getItinerary() {
-        return itinerary;
+    public int getItineraryId() {
+        return itineraryId;
     }
 
-    public void setItinerary(Itineraries itinerary) {
-        this.itinerary = itinerary;
+    public void setItineraryId(int itineraryId) {
+        this.itineraryId = itineraryId;
     }
 
     public PaymentMethod getPaymentMethod() {
@@ -49,5 +49,7 @@ public class OrderedTickets extends PersistentClass {
     public void setPaymentAmount(double paymentAmount) {
         this.paymentAmount = paymentAmount;
     }
+
+
 
 }
