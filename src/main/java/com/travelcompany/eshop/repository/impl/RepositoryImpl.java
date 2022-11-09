@@ -46,7 +46,7 @@ public abstract class RepositoryImpl<T extends PersistentClass> implements Repos
 
     @Override
     public boolean delete(int id) {
-        T t = read(id);
+        T t = RepositoryImpl.this.read(id);
         if (t != null) {
             list.remove(t);
             return true;

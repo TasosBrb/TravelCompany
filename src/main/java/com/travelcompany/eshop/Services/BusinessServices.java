@@ -2,16 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.travelcompany.eshop.repository;
+package com.travelcompany.eshop.Services;
 
+import com.travelcompany.eshop.model.Customer;
+import com.travelcompany.eshop.model.Itineraries;
 import com.travelcompany.eshop.model.OrderedTickets;
-import java.util.List;
 
 /**
  *
  * @author User
  */
-public interface OrderedTicketsRepository extends Repository<OrderedTickets>{
-    List<OrderedTickets> read(String orderedTicket);
+public interface BusinessServices {
+    
+   void discountCalculation();
     
 }

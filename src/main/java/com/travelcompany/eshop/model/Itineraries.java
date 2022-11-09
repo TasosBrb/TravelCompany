@@ -7,17 +7,24 @@ package com.travelcompany.eshop.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-/**
- *
- * @author User
- */
 public class Itineraries extends PersistentClass {
 
     private String departAirportCode;
     private String destAirportCode;
     private Date departDate;
-    private String Airline;
+    private String airline;
     private double basicPrice;
+
+    public Itineraries() {
+    }
+
+    public Itineraries(String departAirportCode, String destAirportCode, Date departDate, String airline, double basicPrice) {
+        this.departAirportCode = departAirportCode;
+        this.destAirportCode = destAirportCode;
+        this.departDate = departDate;
+        this.airline = airline;
+        this.basicPrice = basicPrice;
+    }
 
     public String getDepartAirportCode() {
         return departAirportCode;
@@ -44,11 +51,11 @@ public class Itineraries extends PersistentClass {
     }
 
     public String getAirline() {
-        return Airline;
+        return airline;
     }
 
     public void setAirline(String Airline) {
-        this.Airline = Airline;
+        this.airline = Airline;
     }
 
     public double getBasicPrice() {
@@ -58,5 +65,12 @@ public class Itineraries extends PersistentClass {
     public void setBasicPrice(double basicPrice) {
         this.basicPrice = basicPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Itineraries{" + "departAirportCode=" + departAirportCode + ", destAirportCode=" + destAirportCode + ", departDate=" + departDate + ", airline=" + airline + ", basicPrice=" + basicPrice + '}';
+    }
+    
+    
 
 }

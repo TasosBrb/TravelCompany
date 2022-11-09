@@ -43,27 +43,27 @@ public class DataImport {
     };
 
     private final static String[] ITINERARIES = {
-        "1, ATH, PAR, 2022-02-22-13-35, SkyLines, 300",
-        "2, ATH, LON, 2022-02-22-13-40, SkyLines, 420",
-        "3, ATH, AMS, 2022-02-22-13-45, SkyLines, 280",
-        "4, ATH, PAR, 2022-02-22-14-20, SkyLines, 310",
-        "5, ATH, DUB, 2022-02-22-14-35, SkyLines, 880",
-        "6, ATH, FRA, 2022-02-22-14-55, SkyLines, 380",
-        "7, ATH, FRA, 2022-02-22-15-35, SkyLines, 350",
-        "8, ATH, MEX, 2022-02-22-16-00, SkyLines, 1020",
-        "9, ATH, DUB, 2022-02-22-16-35, SkyLines, 770"
+        "1, ATH, PAR, 2022-02-22-13-35, SkyLines, 300.0",
+        "2, ATH, LON, 2022-02-22-13-40, SkyLines, 420.0",
+        "3, ATH, AMS, 2022-02-22-13-45, SkyLines, 280.0",
+        "4, ATH, PAR, 2022-02-22-14-20, SkyLines, 310.0",
+        "5, ATH, DUB, 2022-02-22-14-35, SkyLines, 880.0",
+        "6, ATH, FRA, 2022-02-22-14-55, SkyLines, 380.0",
+        "7, ATH, FRA, 2022-02-22-15-35, SkyLines, 350.0",
+        "8, ATH, MEX, 2022-02-22-16-00, SkyLines, 1020.0",
+        "9, ATH, DUB, 2022-02-22-16-35, SkyLines, 770.0"
     };
     
     private final static String[] ORDERED_TICKETS = {
-        "1, 1, 2, CASH, 0",
-        "2, 2, 3, CASH, 0",
-        "3, 3, 3, CREDIT_CARD, 0",
-        "4, 2, 4, CREDIT_CARD, 0",
-        "5, 3, 4, CASH, 0",
-        "6, 4, 7, CREDIT_CARD, 0",
-        "7, 5, 7, CREDIT_CARD, 0,",
-        "8, 2, 10, CASH, 0",
-        "9, 1, 3, CASH, 0"
+        "1,1,2, CASH",
+        "2,2,3, CASH",
+        "3,3,3, CREDIT_CARD",
+        "4,2,4, CREDIT_CARD",
+        "5,3,4, CASH",
+        "6,4,7, CREDIT_CARD",
+        "7,5,7, CREDIT_CARD",
+        "8,2,10, CASH",
+        "9,1,3, CASH"
         
     };
     
@@ -102,7 +102,7 @@ public class DataImport {
                         Integer.parseInt(dateParts[4])
                 ));
                 itinerary.setAirline(words[4].trim());
-                itinerary.setBasicPrice(Integer.parseInt(words[5]));
+                itinerary.setBasicPrice(Double.parseDouble(words[5]));
                 itineraryRepository.create(itinerary);
             }
         } 
@@ -121,7 +121,6 @@ public class DataImport {
                 tickets.setCustomerId(Integer.parseInt(words[1]));
                 tickets.setItineraryId(Integer.parseInt(words[2]));
                 tickets.setPaymentMethod(PaymentMethod.valueOf(words[3].trim()));
-                tickets.setPaymentAmount(Integer.parseInt(words[4]));
                 orderedTicketRepository.create(tickets);
 
             }

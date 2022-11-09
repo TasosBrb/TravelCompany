@@ -18,6 +18,16 @@ public class OrderedTickets extends PersistentClass {
     private PaymentMethod paymentMethod;
     private double paymentAmount;
 
+    public OrderedTickets() {
+    }
+
+    public OrderedTickets(int customerId, int itineraryId, PaymentMethod paymentMethod, double paymentAmount) {
+        this.customerId = customerId;
+        this.itineraryId = itineraryId;
+        this.paymentMethod = paymentMethod;
+        this.paymentAmount = paymentAmount;
+    }
+
     public int getCustomerId() {
         return customerId;
     }
@@ -50,6 +60,9 @@ public class OrderedTickets extends PersistentClass {
         this.paymentAmount = paymentAmount;
     }
 
-
+    @Override
+    public String toString() {
+        return "OrderedTickets{ " + "customerId=" + customerId + ", itineraryId=" + itineraryId + ", paymentMethod=" + paymentMethod + ", paymentAmount=" + paymentAmount + '}';
+    }
 
 }

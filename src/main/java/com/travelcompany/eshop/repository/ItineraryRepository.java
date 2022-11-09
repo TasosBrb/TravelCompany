@@ -5,12 +5,13 @@
 package com.travelcompany.eshop.repository;
 
 import com.travelcompany.eshop.model.Itineraries;
+import java.util.List;
 
 /**
  *
  * @author User
  */
 public interface ItineraryRepository extends Repository<Itineraries>{
-    void update(int itineararieId, double price);
+    List<Itineraries> read(String itinerary);
     
 }

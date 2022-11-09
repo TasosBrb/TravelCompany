@@ -6,19 +6,18 @@ package com.travelcompany.eshop.repository.impl;
 
 import com.travelcompany.eshop.model.Itineraries;
 import com.travelcompany.eshop.repository.ItineraryRepository;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- *
- * @author User
- */
-public class ItineraryRepositoryImpl extends RepositoryImpl<Itineraries> implements ItineraryRepository{
+
+public class ItineraryRepositoryImpl extends RepositoryImpl<Itineraries> implements ItineraryRepository {
 
     @Override
-    public void update(int itineararieId, double price) {
-        Itineraries itinerary = read(itineararieId);
-        if (itinerary != null){
-            itinerary.setBasicPrice(price);
-        }
+    public List<Itineraries> read(String itinerary) {
+        List<Itineraries> itineraries = new ArrayList<>();
+        return itineraries;
+
     }
-    
 }
+
+

@@ -4,10 +4,6 @@
  */
 package com.travelcompany.eshop.model;
 
-/**
- *
- * @author User
- */
 public abstract class PersistentClass {
 
     private int id;
@@ -17,7 +13,7 @@ public abstract class PersistentClass {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = id + 1;
     }
 
 }
