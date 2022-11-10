@@ -16,21 +16,11 @@ public class TravelCompany {
     public static void main(String[] args) {
         
         Reports report = new Reports();
-        report.finalReports();
+        report.firstReport();
+        report.secondReport();
+        report.thirdReport();
+        report.fourthReport();
 
-//        BusinessServices businessServices = new BusinessServicesImpl(custRepo, itinRepo, ticketRepo);
-//        businessServices.discountCalculation();
-//        List<Customer> customers = custRepo.read();  
-//        for (Customer customer : customers){
-//            System.out.println(
-//                        customer.getId()
-//                        + "," + customer.getName()
-//                        + "," + customer.getAddress()
-//                        + "," + customer.getEmail()
-//                        + "," + customer.getNationality()
-//                        + "," + customer.getCustomerCategory()
-//                    
-//            );
-//        }
+//       
     }
 }

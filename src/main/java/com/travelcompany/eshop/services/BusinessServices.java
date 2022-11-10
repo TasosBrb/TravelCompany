@@ -29,6 +29,11 @@ public interface BusinessServices {
     
     int totalNumberOfOrderedTickets();
     
+    public void itinerariesPerAirportCode();
+    
+    public void mostTicketsAndMaxCostCustomer();
+    
+    public void customersWhithNoTicket();
     
 
 }
