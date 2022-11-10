@@ -12,6 +12,6 @@ import java.util.List;
  * @author User
  */
 public interface OrderedTicketsRepository extends Repository<OrderedTickets>{
-    List<OrderedTickets> read(String orderedTicket);
+    List<OrderedTickets> read(String orderedTicketName);
     
 }

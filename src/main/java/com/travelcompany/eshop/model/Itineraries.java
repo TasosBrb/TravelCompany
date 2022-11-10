@@ -11,14 +11,14 @@ public class Itineraries extends PersistentClass {
 
     private String departAirportCode;
     private String destAirportCode;
-    private Date departDate;
+    private String departDate;
     private String airline;
     private double basicPrice;
 
     public Itineraries() {
     }
 
-    public Itineraries(String departAirportCode, String destAirportCode, Date departDate, String airline, double basicPrice) {
+    public Itineraries(String departAirportCode, String destAirportCode, String departDate, String airline, double basicPrice) {
         this.departAirportCode = departAirportCode;
         this.destAirportCode = destAirportCode;
         this.departDate = departDate;
@@ -42,11 +42,11 @@ public class Itineraries extends PersistentClass {
         this.destAirportCode = destAirportCode;
     }
 
-    public Date getDepartDate() {
+    public String getDepartDate() {
         return departDate;
     }
 
-    public void setDepartDate(Date departDate) {
+    public void setDepartDate(String departDate) {
         this.departDate = departDate;
     }
 

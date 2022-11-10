@@ -12,6 +12,7 @@ import java.util.List;
  * @author User
  */
 public interface ItineraryRepository extends Repository<Itineraries>{
-    List<Itineraries> read(String itinerary);
+    List<Itineraries> read(String itineraryName);
+    void update(int itineraryId, double price);
     
 }

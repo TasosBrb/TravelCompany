@@ -18,6 +18,16 @@ public class Customer extends PersistentClass {
     private String nationality;
     private CustomerCategory customerCategory;
 
+    public Customer() {
+    }
+
+    public Customer(String name, String email, String address, String nationality) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.nationality = nationality;
+    }
+
     public String getName() {
         return name;
     }
@@ -57,6 +67,5 @@ public class Customer extends PersistentClass {
     public void setCustomerCategory(CustomerCategory customerCategory) {
         this.customerCategory = customerCategory;
     }
-            
 
 }

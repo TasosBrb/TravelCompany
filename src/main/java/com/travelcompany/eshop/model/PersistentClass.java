@@ -13,7 +13,7 @@ public abstract class PersistentClass {
     }
 
     public void setId(int id) {
-        this.id = id + 1;
+        this.id = id;
     }
 
 }

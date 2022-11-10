@@ -7,8 +7,8 @@ package com.travelcompany.eshop.repository;
 import com.travelcompany.eshop.model.PersistentClass;
 import java.util.List;
 
+public interface Repository<T extends PersistentClass> {
 
-public interface Repository <T extends PersistentClass>  {
     //CRUD
     int create(T t);
 
@@ -17,5 +17,5 @@ public interface Repository <T extends PersistentClass>  {
     List<T> read();
 
     boolean delete(int id);
-    
+
 }

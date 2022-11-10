@@ -18,6 +18,14 @@ public class ItineraryRepositoryImpl extends RepositoryImpl<Itineraries> impleme
         return itineraries;
 
     }
+
+    @Override
+    public void update(int itineraryId, double price) {
+       Itineraries itinerary =  read(itineraryId);
+        if(itinerary !=null){
+            itinerary.setBasicPrice(price);
+        }
+    }
 }
 
 
