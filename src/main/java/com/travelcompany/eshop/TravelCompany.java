@@ -5,8 +5,8 @@
 
 package com.travelcompany.eshop;
 
-import com.travelcompany.eshop.Services.BusinessServices;
-import com.travelcompany.eshop.ServicesImpl.BusinessServicesImpl;
+import com.travelcompany.eshop.services.BusinessServices;
+import com.travelcompany.eshop.services.BusinessServicesImpl;
 import com.travelcompany.eshop.enums.CustomerCategory;
 import com.travelcompany.eshop.model.Customer;
 import com.travelcompany.eshop.model.OrderedTickets;
