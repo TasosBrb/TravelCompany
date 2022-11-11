@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.Reports;
 
 import com.travelcompany.eshop.enums.CustomerCategory;
@@ -25,7 +21,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * Pirnts a Menu where the user can have access to the reports
  */
 public class Reports {
 
@@ -34,9 +30,12 @@ public class Reports {
     ItineraryRepository itineraryRepository = new ItineraryRepositoryImpl();
     DataImport dataImport = new DataImport(customerRepository, itineraryRepository, orderedTicketsRepository);
     BusinessServices service = new BusinessServicesImpl(customerRepository, itineraryRepository, orderedTicketsRepository);
-    
-     public void menu(){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"); 
+
+    /**
+     * Creates the Menu of the reports
+     */
+    public void menu() {
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println("Please select an option (1 - 6) from the table below : ");
         System.out.println("1 --> The list of the total number and list of the cost of tickets for all customers (discounts included) : ");
         System.out.println("2 --> List of the total offered itineraries (no discounts) : ");
@@ -44,85 +43,86 @@ public class Reports {
         System.out.println("4 --> List of the customers who have not purchased any tickets : ");
         System.out.println("5 --> The Custome Exceptions as requested");
         System.out.println("6 --> Exit the program");
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"); 
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println("");
-        }
-    
-    
-    public void reportingMenu(){
+    }
+
+    /**
+     * Handles the choices of the report menu
+     */
+    public void reportChoices() {
         dataImport.insertCustomers();
         dataImport.insertOrederedTickets();
         dataImport.insertItineraries();
         Scanner scaner = new Scanner(System.in);
-        
+
         System.out.println("!!!___Welcome to Travel Company___!!!");
-        
+
         menu();
         int option = scaner.nextInt();
-        
-        while(option != 6){
-            if(option == 1){
+
+        while (option != 6) {
+            if (option == 1) {
                 System.out.println("Total Number of ticket : " + service.totalNumberOfOrderedTickets());
                 System.out.println("Total cost of all tickets : " + service.allTicketsCostAfterDiscount());
                 System.out.println("");
                 menu();
                 option = scaner.nextInt();
-            }
-            else if(option == 2){
+            } else if (option == 2) {
                 System.out.println("List of the total offered itineraries (no discounts) : ");
                 service.itinerariesPerAirportCode();
                 System.out.println("");
                 menu();
                 option = scaner.nextInt();
-            }
-            else if(option == 3){
-                service.mostTicketsAndMaxCostCustomer(); 
+            } else if (option == 3) {
+                service.mostTicketsAndMaxCostCustomer();
                 System.out.println("");
                 menu();
                 option = scaner.nextInt();
-            }
-            else if(option == 4){
+            } else if (option == 4) {
                 System.out.println("The customers who have not purchased any tickets are: ");
                 service.customersWhithNoTicket();
                 System.out.println("");
                 menu();
                 option = scaner.nextInt();
-            }
-            else if(option == 5){
+            } else if (option == 5) {
                 customException();
+                System.out.println("");
+                menu();
+                option = scaner.nextInt();
+            } else {
+                System.out.println("Invalid input. Please try again");
                 System.out.println("");
                 menu();
                 option = scaner.nextInt();
             }
         }
-          
+
     }
-    
-     public void customException() {
-        try{
+
+    /**
+     * Creates the requested Custom Exceptions
+     */
+    public void customException() {
+        try {
             Customer customer = new Customer("Giorgos Papadopoulos", "georgepap@travelcompany.com", "Athens", "Greek", CustomerCategory.BUSINESS);
             service.customerRegister(customer);
-        }
-        catch(CustomerException e){
+        } catch (CustomerException e) {
             System.out.println(e.getMessage());
         }
-        try{
+        try {
             Itineraries itinerary = new Itineraries(null, null, "2022-11-11-13-30", "Skylines", 230.00);
             service.itineraryRegister(itinerary);
-        }
-        catch(ItinerariesException e){
+        } catch (ItinerariesException e) {
             System.out.println(e.getMessage());
         }
-        try{
+        try {
             OrderedTickets ticket = new OrderedTickets(12, 12, PaymentMethod.CASH, 280.00);
             service.orderedTicketRegister(ticket);
-        }
-        catch(OrderedTicketsException e){
+        } catch (OrderedTicketsException e) {
             System.out.println(e.getMessage());
         }
-        
-        
+
     }
-    
 
 }

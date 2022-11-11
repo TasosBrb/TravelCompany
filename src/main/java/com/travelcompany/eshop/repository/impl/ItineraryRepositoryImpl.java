@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.repository.impl;
 
 import com.travelcompany.eshop.model.Itineraries;
@@ -9,7 +5,10 @@ import com.travelcompany.eshop.repository.ItineraryRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ *
+ * Implemetns the ItineraryRepository Interface methods
+ */
 public class ItineraryRepositoryImpl extends RepositoryImpl<Itineraries> implements ItineraryRepository {
 
     @Override
@@ -21,11 +20,9 @@ public class ItineraryRepositoryImpl extends RepositoryImpl<Itineraries> impleme
 
     @Override
     public void update(int itineraryId, double price) {
-       Itineraries itinerary =  read(itineraryId);
-        if(itinerary !=null){
+        Itineraries itinerary = read(itineraryId);
+        if (itinerary != null) {
             itinerary.setBasicPrice(price);
         }
     }
 }
-
-

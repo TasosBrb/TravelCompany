@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.repository.impl;
 
 import com.travelcompany.eshop.model.PersistentClass;
@@ -11,12 +7,12 @@ import java.util.List;
 
 /**
  *
- * @author User
+ * Implemetns the Repository Interface methods
  */
 public abstract class RepositoryImpl<T extends PersistentClass> implements Repository<T> {
 
     private final List<T> list;
-    private int index = 1 ;
+    private int index = 1;
 
     public RepositoryImpl() {
         list = new ArrayList<>();

@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.model;
 
 import com.travelcompany.eshop.enums.CustomerCategory;
 
 /**
  *
- * @author User
+ * Class for handling Customers
  */
 public class Customer extends PersistentClass {
 
@@ -28,7 +24,6 @@ public class Customer extends PersistentClass {
         this.nationality = nationality;
         this.customerCategory = customerCategory;
     }
-
 
     public String getName() {
         return name;

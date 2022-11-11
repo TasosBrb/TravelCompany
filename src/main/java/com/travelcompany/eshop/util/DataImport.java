@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.util;
 
 import com.travelcompany.eshop.enums.CustomerCategory;
@@ -12,11 +8,10 @@ import com.travelcompany.eshop.model.OrderedTickets;
 import com.travelcompany.eshop.repository.CustomerRepository;
 import com.travelcompany.eshop.repository.ItineraryRepository;
 import com.travelcompany.eshop.repository.OrderedTicketsRepository;
-import java.util.Date;
 
 /**
  *
- * @author User
+ * Imports all the appropriate data to the repositories
  */
 public class DataImport {
 
@@ -53,7 +48,7 @@ public class DataImport {
         "ATH, MEX, 2022-02-22-16-00, SkyLines, 1020",
         "ATH, DUB, 2022-02-22-16-35, SkyLines, 770"
     };
-    
+
     private final static String[] ORDERED_TICKETS = {
         "1,2, CASH,420",
         "2,3, CASH,280",
@@ -64,11 +59,14 @@ public class DataImport {
         "5,7, CREDIT_CARD,350",
         "2,10, CASH,0",
         "1,3, CASH,280"
-        
+
     };
-    
-    public void insertCustomers(){
-         for (String customerString : CUSTOMERS){
+
+    /**
+     * Inserts all the Customers data
+     */
+    public void insertCustomers() {
+        for (String customerString : CUSTOMERS) {
             String[] words = customerString.split(",");
             Customer customer = new Customer();
             customer.setName(words[0].trim());
@@ -79,34 +77,39 @@ public class DataImport {
             customerRepository.create(customer);
         }
     }
-    public void insertItineraries(){
-            for (String itineraryString : ITINERARIES){
-                String[] words = itineraryString.split(",");
-                Itineraries itinerary = new Itineraries();
-                itinerary.setDepartAirportCode(words[0].trim());
-                itinerary.setDestAirportCode(words[1].trim());
-                itinerary.setDepartDate(words[2].trim());
-                itinerary.setAirline(words[3].trim());
-                itinerary.setBasicPrice(Double.parseDouble(words[4].trim()));
-                itineraryRepository.create(itinerary);
+
+    /**
+     * Inserts all the Itineraries data
+     */
+    public void insertItineraries() {
+        for (String itineraryString : ITINERARIES) {
+            String[] words = itineraryString.split(",");
+            Itineraries itinerary = new Itineraries();
+            itinerary.setDepartAirportCode(words[0].trim());
+            itinerary.setDestAirportCode(words[1].trim());
+            itinerary.setDepartDate(words[2].trim());
+            itinerary.setAirline(words[3].trim());
+            itinerary.setBasicPrice(Double.parseDouble(words[4].trim()));
+            itineraryRepository.create(itinerary);
         }
-         
+
     }
-    
-    
-    public void insertOrederedTickets(){
-            for (String ticketString: ORDERED_TICKETS){
-                String[] words = ticketString.split(",");
-                OrderedTickets ticket = new OrderedTickets();
-                ticket.setCustomerId(Integer.parseInt(words[0].trim()));
-                ticket.setItineraryId(Integer.parseInt(words[1].trim()));
-                ticket.setPaymentMethod(PaymentMethod.valueOf(words[2].trim()));
-                ticket.setPaymentAmount(Double.parseDouble(words[3].trim()));
-                orderedTicketRepository.create(ticket);
+
+    /**
+     * Inserts all the OrderedTickets data
+     */
+    public void insertOrederedTickets() {
+        for (String ticketString : ORDERED_TICKETS) {
+            String[] words = ticketString.split(",");
+            OrderedTickets ticket = new OrderedTickets();
+            ticket.setCustomerId(Integer.parseInt(words[0].trim()));
+            ticket.setItineraryId(Integer.parseInt(words[1].trim()));
+            ticket.setPaymentMethod(PaymentMethod.valueOf(words[2].trim()));
+            ticket.setPaymentAmount(Double.parseDouble(words[3].trim()));
+            orderedTicketRepository.create(ticket);
 
         }
-        
-        
+
     }
 
 }

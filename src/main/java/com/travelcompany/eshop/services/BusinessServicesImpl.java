@@ -1,11 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.services;
 
-import com.travelcompany.eshop.enums.CustomerCategory;
-import com.travelcompany.eshop.enums.PaymentMethod;
 import com.travelcompany.eshop.exceptions.CustomerException;
 import com.travelcompany.eshop.exceptions.ExceptionsCodes;
 import com.travelcompany.eshop.exceptions.ItinerariesException;
@@ -22,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author User
+ * Implements all the methods from the Business Service Interface
  */
 public class BusinessServicesImpl implements BusinessServices {
 
@@ -225,6 +219,6 @@ public class BusinessServicesImpl implements BusinessServices {
             }
         }
 
-    }   
+    }
 
 }

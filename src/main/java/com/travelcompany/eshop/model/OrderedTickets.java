@@ -1,15 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.model;
 
 import com.travelcompany.eshop.enums.PaymentMethod;
-import java.util.List;
 
 /**
  *
- * @author User
+ * Class for handling the Ordered Tickets
  */
 public class OrderedTickets extends PersistentClass {
 

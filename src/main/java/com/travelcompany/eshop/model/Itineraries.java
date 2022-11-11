@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.travelcompany.eshop.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
+/**
+ *
+ * Class for handling itineraries
+ */
 public class Itineraries extends PersistentClass {
 
     private String departAirportCode;
@@ -70,7 +67,5 @@ public class Itineraries extends PersistentClass {
     public String toString() {
         return "Itineraries{" + "departAirportCode=" + departAirportCode + ", destAirportCode=" + destAirportCode + ", departDate=" + departDate + ", airline=" + airline + ", basicPrice=" + basicPrice + '}';
     }
-    
-    
 
 }
