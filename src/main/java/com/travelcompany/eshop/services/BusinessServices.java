@@ -17,11 +17,11 @@ import com.travelcompany.eshop.model.OrderedTickets;
  */
 public interface BusinessServices {
 
-    void CustomerRegister(Customer customer) throws CustomerException;
+    void customerRegister(Customer customer) throws CustomerException;
 
-    void ItineraryRegister(Itineraries itineraries) throws ItinerariesException;
+    void itineraryRegister(Itineraries itineraries) throws ItinerariesException;
     
-    void OrderedTicketRegister(OrderedTickets ticket) throws OrderedTicketsException;
+    void orderedTicketRegister(OrderedTickets ticket) throws OrderedTicketsException;
 
     double discountCalculation(double initialPaymentAmount, OrderedTickets orderedTickets, Customer customer);
     
@@ -34,6 +34,7 @@ public interface BusinessServices {
     public void mostTicketsAndMaxCostCustomer();
     
     public void customersWhithNoTicket();
+    
     
 
 }

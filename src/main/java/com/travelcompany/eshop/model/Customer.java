@@ -21,12 +21,14 @@ public class Customer extends PersistentClass {
     public Customer() {
     }
 
-    public Customer(String name, String email, String address, String nationality) {
+    public Customer(String name, String email, String address, String nationality, CustomerCategory customerCategory) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.nationality = nationality;
+        this.customerCategory = customerCategory;
     }
+
 
     public String getName() {
         return name;

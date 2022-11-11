@@ -16,11 +16,13 @@ public class TravelCompany {
     public static void main(String[] args) {
         
         Reports report = new Reports();
-        report.firstReport();
-        report.secondReport();
-        report.thirdReport();
-        report.fourthReport();
+        report.reportingMenu();
+//        report.firstReport();
+//        report.secondReport();
+//        report.thirdReport();
+//        report.fourthReport();
+            
 
-//       
+       
     }
 }
